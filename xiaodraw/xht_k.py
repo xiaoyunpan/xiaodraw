@@ -67,3 +67,38 @@ def hux():
         pen.circle(hux_ibj,hux_ihd)
     except Exception as error:
         easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
+
+#矩形库
+def fx():
+    try:
+        fx_xc=easygui.enterbox("请输入横线粗度... / Please enter the thickness of the horizontal line...")
+        fx_ixc=int(fx_xc)
+        pen.pensize(fx_ixc)
+    except Exception as error:
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
+
+    fx_c=easygui.choicebox("请选择画笔颜色... / Please choose a brush color...",
+                 choices = ['Red','Blue','Yellow','Black'])
+    if fx_c=='Red':
+        pen.pencolor('red')
+    if fx_c=='Blue':
+        pen.pencolor('blue')
+    if fx_c=='Yellow':
+        pen.pencolor('yellow')
+    if fx_c=='Black':
+        pen.pencolor('black')
+    try:
+        fx_bc=easygui.enterbox("请输入矩形的长... / Please enter the length of the horizontal line...")
+        fx_ibc=int(fx_bc)
+    except Exception as error:
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
+    try:
+        fx_bk=easygui.enterbox("请输入矩形的宽... / Please enter the length of the horizontal line...")
+        fx_ibk=int(fx_bk)
+        for i in range (2):
+            pen.forward(fx_ibc)
+            pen.left(90)
+            turtle.forward(fx_ibk)
+            pen.left(90)
+    except Exception as error:
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
