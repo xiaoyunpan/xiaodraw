@@ -11,13 +11,4 @@ def xht():
         if d_c == '画弧线':
                 xht_k.hux()
         if d_c == '自定义':
-                try:
-                        f2=open('htjh.ini','r')
-                        jh=f2.readline()
-                        f2.close
-                except:
-                        jh=False
-                if jh=='True':
-                        xht_k.hx()
-                else:
-                        xjh.jh()                      
+                xht_k.hx()
