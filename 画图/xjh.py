@@ -1,47 +1,36 @@
-import easygui,urllib.request,main,openkey
-def jh():
+"""
+本代码模块由上晋开发
+上晋的软件官方网站: https://soft.xiaoyunpan.cn
+"""
+import turtle,easygui,xht
+pen=turtle
+def hx():
     try:
-        f=open('_jh_.key','r')
-        wbjh=f.readline()
-        f.close()
-    except:
-        f=open('_jh_.key','w')
-        f=open('_jh_.key','r')
-        wbjh=f.readline()
-        f.close()
-    try:
-        wjh=urllib.request.urlopen('https://oss.shandianpan.com/b908ee1249ecba86b6309dad811b119c.doc')
-        rjh=wjh.read().decode('utf-8')
-    except:
-        choice=easygui.buttonbox("网络错误，无法从服务器获取激活信息！",
-                       choices = ['确定'])
-        if choice == '确定':
-            main.main()
-    try:
-        if wbjh == 'eb2e0a6306fbfbaff264b5315fb17a434124e4f296b1452276932':
-            choice=easygui.buttonbox("您已激活，可以使用全部功能，感谢您对上晋的支持！",
-                    choices = ['确定'])
-            if choice == '确定':
-                main.main()
-        else:
-            sjh=easygui.enterbox("""                            您尚未激活，请立即输入密钥激活以确保所有功能可用！
-                                密钥是免费的，您可以从《上晋的生活记录》丛书中寻
-                                找或通过上晋的云盘获取""")
-            if sjh == rjh:
-                openkey.open_key_jh()
-                choice=easygui.buttonbox("激活成功！",
-                               choices = ['确定'])
-                if choice == '确定':
-                    main.main()
-            else:
-                choice=easygui.buttonbox("密钥错误！",
-                               choices = ['确定'])
-                if choice == '确定':
-                    main.main()
+        hx_xc=easygui.enterbox("请输入横线粗度... / Please enter the thickness of the horizontal line...")
+        hx_ixc=int(hx_xc)
+        pen.pensize(hx_ixc)
     except Exception as error:
-        easygui.msgbox("""                          警告
-                          发生错误，程序被迫终止！错误代码详见错误提示程序标题栏。
-                          请确保您没有进行违规操作，稍后您可以自行关闭程序。
-                          如果您无法关闭程序，请强制关闭。如果以后仍然出现错误，请联系我们。
-                          如果您要联系技术支持人员，请将错误代码告知他们。""",error)
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
 
+    hx_c=easygui.choicebox("请选择画笔颜色... / Please choose a brush color...",
+                 choices = ['Red','Blue','Yellow','Black'])
+    if hx_c=='Red':
+        pen.pencolor('red')
+    if hx_c=='Blue':
+        pen.pencolor('blue')
+    if hx_c=='Yellow':
+        pen.pencolor('yellow')
+    if hx_c=='Black':
+        pen.pencolor('black')
+    try:
+        hx_ch=easygui.enterbox("请输入横线长度... / Please enter the length of the horizontal line...")
+        hx_ich=int(hx_ch)
+        pen.forward(hx_ich)
+    except Exception as error:
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
+    try:
+        hx_zj=easygui.enterbox("请输入转角角度(左)... / Please enter the corner angle(left)...")
+        hx_izj=int(hx_zj)
+        pen.left(hx_izj)
+    except Exception as error:
+        easygui.msgbox("Error！请输入不含单位的数字！并确保您没有进行违规操作！",error)
