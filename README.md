@@ -9,5 +9,5 @@
 
 #xiaodraw
 
-#Thank you for choosing xiaosoftware!
+#Thank you for choosing Shangjin's software!
 This software provides you with a simple drawing program, allowing you to provide a way of question and answer, and create a wonderful work.Everything will be done on the computer, no need for you to write it yourself.
