@@ -1,4 +1,4 @@
-import easygui,xjh,main
+import easygui,main
 def xgy():
     choice=easygui.buttonbox("""                      程序由上晋编写及编译
                       语言:Python
