@@ -5,9 +5,11 @@
 import easygui,xht_k,main,xjh
 def xht():
         d_c = easygui.choicebox("请选择一种操作",
-                      choices = ['画圆形','画方形','自定义','返回主菜单'])
+                      choices = ['画弧线','画方形','自定义','返回主菜单'])
         if d_c == '返回主菜单':
                 main.main()
+        if d_c == '画弧线':
+                xht_k.hux()
         if d_c == '自定义':
                 try:
                         f2=open('htjh.ini','r')
@@ -18,5 +20,4 @@ def xht():
                 if jh=='True':
                         xht_k.hx()
                 else:
-                        xjh.jh()
-                        
+                        xjh.jh()                      
